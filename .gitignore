@@ -1,0 +1,13 @@
+.rvmrc
+.ruby-gemset
+.ruby-version
+.bundle
+.idea/
+zeus.json
+public/system/
+public/assets/
+
+# Ignore all logfiles and tempfiles.
+log/
+tmp/
+vendor/ruby/
