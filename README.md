@@ -96,6 +96,7 @@
 
   * Run console.
     * First test:
+
         ```
         checkout = Checkout.new(PricingRule.all)
         checkout.scan(Product.find_by_code('VOUCHER'))
@@ -105,6 +106,7 @@
         ==> 32.5
         ```
     * Second test:
+
         ```
         checkout = Checkout.new(PricingRule.all)
         checkout.scan(Product.find_by_code('VOUCHER'))
@@ -114,6 +116,7 @@
         ==> 25.0
         ```
     * Third test:
+
         ```
         checkout = Checkout.new(PricingRule.all)
         checkout.scan(Product.find_by_code('TSHIRT'))
@@ -124,7 +127,8 @@
         checkout.total
         ==> 81.0
         ```
-    * Fourth test: 
+    * Fourth test:
+
         ```
         checkout = Checkout.new(PricingRule.all)
         checkout.scan(Product.find_by_code('VOUCHER'))
