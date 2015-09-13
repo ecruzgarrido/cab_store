@@ -95,3 +95,45 @@
 ## Execute store
 
   * Run console.
+    * First test:
+        ```
+        checkout = Checkout.new(PricingRule.all)
+        checkout.scan(Product.find_by_code('VOUCHER'))
+        checkout.scan(Product.find_by_code('TSHIRT'))
+        checkout.scan(Product.find_by_code('MUG'))
+        checkout.total
+        ==> 32.5
+        ```
+    * Second test:
+        ```
+        checkout = Checkout.new(PricingRule.all)
+        checkout.scan(Product.find_by_code('VOUCHER'))
+        checkout.scan(Product.find_by_code('TSHIRT'))
+        checkout.scan(Product.find_by_code('VOUCHER'))
+        checkout.total
+        ==> 25.0
+        ```
+    * Third test:
+        ```
+        checkout = Checkout.new(PricingRule.all)
+        checkout.scan(Product.find_by_code('TSHIRT'))
+        checkout.scan(Product.find_by_code('TSHIRT'))
+        checkout.scan(Product.find_by_code('TSHIRT'))
+        checkout.scan(Product.find_by_code('VOUCHER'))
+        checkout.scan(Product.find_by_code('TSHIRT'))
+        checkout.total
+        ==> 81.0
+        ```
+    * Fourth test:
+        ```
+        checkout = Checkout.new(PricingRule.all)
+        checkout.scan(Product.find_by_code('VOUCHER'))
+        checkout.scan(Product.find_by_code('TSHIRT'))
+        checkout.scan(Product.find_by_code('VOUCHER'))
+        checkout.scan(Product.find_by_code('VOUCHER'))
+        checkout.scan(Product.find_by_code('MUG'))
+        checkout.scan(Product.find_by_code('TSHIRT'))
+        checkout.scan(Product.find_by_code('TSHIRT'))
+        checkout.total
+        ==> 74.5
+        ```
