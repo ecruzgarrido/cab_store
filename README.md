@@ -124,7 +124,7 @@
         checkout.total
         ==> 81.0
         ```
-    * Fourth test:
+    * Fourth test: 
         ```
         checkout = Checkout.new(PricingRule.all)
         checkout.scan(Product.find_by_code('VOUCHER'))
