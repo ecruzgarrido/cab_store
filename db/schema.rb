@@ -11,14 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150906095830) do
+ActiveRecord::Schema.define(version: 20150906155405) do
 
   create_table "pricing_rules", force: :cascade do |t|
-    t.boolean  "accumulate",             default: false
-    t.integer  "quantity",   limit: 4
-    t.string   "code",       limit: 255
+    t.boolean  "accumulate",                default: false
+    t.integer  "quantity",      limit: 4
+    t.string   "code",          limit: 255
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.float    "discount",      limit: 24
+    t.integer  "quantity_free", limit: 4
   end
 
   add_index "pricing_rules", ["code"], name: "index_pricing_rules_on_code", using: :btree
