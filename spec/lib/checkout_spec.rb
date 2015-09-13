@@ -70,7 +70,7 @@ RSpec.describe Checkout, type: :model do
       end
     end
 
-    context 'thrird purchase' do
+    context 'third purchase' do
 
       before do
         checkout.scan(products[:tshirt])
